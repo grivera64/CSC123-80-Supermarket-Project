@@ -41,9 +41,16 @@ public abstract class Shopper
 		
 	}
 	
-	public abstract void setShoppingType(int type);
-	public abstract int getShoppingType();
-	public abstract void setTimeIntoCheckoutLine(int time);
+	public void setShoppingType(String shoppingType)
+	{
+		
+		this.shopperType = shoppingType;
+		
+	}
+	
+	public abstract void setShoppingTimeRemaining(int shoppingTimeRemaining);
+	public abstract int getShoppingTimeRemaining();
+	public abstract void setTimeIntoCheckoutLine(int timeIntoCheckoutLine);
 	public abstract int getTotalTimeCheckingOut();
 	
 }
