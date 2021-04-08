@@ -11,6 +11,39 @@
 public abstract class Shopper
 {
 	
+	private String shopperType;
 	
+	public Shopper()
+	{
+		
+		this.setShopperType("");
+		
+	}
+	
+	public Shopper(String shopperType)
+	{
+		
+		this.setShopperType(shopperType);
+		
+	}
+	
+	public void setShopperType(String shopperType)
+	{
+		
+		this.shopperType = shopperType;
+		
+	}
+	
+	public String getShopperType()
+	{
+		
+		return this.shopperType;
+		
+	}
+	
+	public abstract void setShoppingType(int type);
+	public abstract int getShoppingType();
+	public abstract void setTimeIntoCheckoutLine(int time);
+	public abstract int getTotalTimeCheckingOut();
 	
 }
