@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /*
  * 
  * Name: BigShopper.java
@@ -8,6 +6,8 @@ import java.util.Random;
  * Date: 04/08/2021
  * 
 */
+
+import java.util.Random;
 
 public class BigShopper extends Shopper
 {
