@@ -206,21 +206,23 @@ public class Supermarket
 		PrintWriter fileWriter = new PrintWriter(new File(fileName));
 		
 		fileWriter.printf("Data For Supermarket Beheshti Supermarket\n");
-		fileWriter.printf("%13s%16s%11s%16s%16s%16s", 
+		fileWriter.printf("%13s%16s%11s%16s%16s%16s\n", 
 				"Shopper ID", "Start Time", "End Time", "Time Shopping", 
 				"Checkout Time", "Time in Store");
 		
 		Iterator<Shopper> shoppers = this.doneShopping.iterator();
 		
 		
-		shoppers.forEachRemaining((Shopper shopper) -> {
+		shoppers.forEachRemaining((Shopper shopper) -> 
+		{
+			
 			
 			if (shopper instanceof BigShopper)
 			{
 				
 				BigShopper tempBig = (BigShopper) shopper;
 				
-				fileWriter.printf("%14s%9d%11d%16d%16d16d\n", 
+				fileWriter.printf("%14s%9d%11d%16d%16d%16d\n", 
 					tempBig.toString(), tempBig.getStartTime(),
 					tempBig.getEndTime(), tempBig.getTimeShopping(),
 					tempBig.getTotalTimeCheckingOut(),
@@ -237,7 +239,7 @@ public class Supermarket
 				
 				FastShopper tempFast = (FastShopper) shopper;
 				
-				fileWriter.printf("%14s%9d%11d%16d%16d16d\n", 
+				fileWriter.printf("%14s%9d%11d%16d%16d%16d\n", 
 					tempFast.toString(), tempFast.getStartTime(),
 					tempFast.getEndTime(), tempFast.getTimeShopping(),
 					tempFast.getTotalTimeCheckingOut(),
@@ -249,18 +251,19 @@ public class Supermarket
 				
 			}
 			
-		});
+		}
+		);
 		
 		this.avgTimeFast /= this.numOfFast;
 		this.avgTimeBig /= this.numOfBig;
 		
-		System.out.printf("The average time checking out on the "
+		fileWriter.printf("The average time checking out on the "
 				+ "Big Queue for %d Shoppers is %.2f minutes\n", 
 				this.numOfBig, this.avgTimeBig);
 		
-		System.out.printf("The average time checking out on the "
+		fileWriter.printf("The average time checking out on the "
 				+ "Fast Queue for %d Shoppers is %.2f minutes\n", 
-				this.numOfBig, this.avgTimeBig);
+				this.numOfFast, this.avgTimeFast);
 		
 		fileWriter.close();
 		
