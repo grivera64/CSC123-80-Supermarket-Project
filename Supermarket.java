@@ -222,12 +222,7 @@ public class Supermarket
 				
 				BigShopper tempBig = (BigShopper) shopper;
 				
-				fileWriter.printf("%14s%9d%11d%16d%16d%16d\n", 
-					tempBig.toString(), tempBig.getStartTime(),
-					tempBig.getEndTime(), tempBig.getTimeShopping(),
-					tempBig.getTotalTimeCheckingOut(),
-					tempBig.getTotalTimeInStore()
-				);
+				fileWriter.printf("%14s\n", tempBig.toString());
 				
 				
 				this.avgTimeBig += tempBig.getTotalTimeCheckingOut();
@@ -239,12 +234,7 @@ public class Supermarket
 				
 				FastShopper tempFast = (FastShopper) shopper;
 				
-				fileWriter.printf("%14s%9d%11d%16d%16d%16d\n", 
-					tempFast.toString(), tempFast.getStartTime(),
-					tempFast.getEndTime(), tempFast.getTimeShopping(),
-					tempFast.getTotalTimeCheckingOut(),
-					tempFast.getTotalTimeInStore()
-				);
+				fileWriter.printf("%14s\n", tempFast.toString());
 				
 				this.avgTimeFast += tempFast.getTotalTimeCheckingOut();
 				this.numOfFast++;
